@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector:'employee-table',
-  templateUrl:'./employeeTable.template.html'
+  templateUrl:'./employeeTable.component.html'
 })
 export class EmployeeTableComponent {
     

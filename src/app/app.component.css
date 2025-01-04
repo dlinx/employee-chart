@@ -1,0 +1,8 @@
+.header-center.header-nav {
+  margin: auto;
+  &::before {
+    display: none;
+  }
+}
+
+  
