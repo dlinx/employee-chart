@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.datagrid-row-sticky .datagrid-cell:last-child:after{
+    display: none;
+}
+.datagrid-table .datagrid-column .datagrid-column-separator::after {
+    display: none;
+}
