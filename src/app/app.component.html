@@ -1,8 +1,22 @@
 <header class="header-6">
   <div class="header-center header-nav">
     <nav class="btn-group">
-      <a [routerLink]="'/employees/tree'" class="btn" routerLinkActive="btn-primary">Graph View</a>
-      <a [routerLink]="'employees/table'" class="btn" routerLinkActive="btn-primary">Grid View</a>
+      <a
+        [routerLink]="'/employees/tree'"
+        class="btn"
+        routerLinkActive="btn-primary"
+      >
+        <cds-icon shape="users" solid="true"></cds-icon>
+        Graph View
+      </a>
+      <a
+        [routerLink]="'employees/table'"
+        class="btn"
+        routerLinkActive="btn-primary"
+      >
+        <cds-icon shape="grid-view"></cds-icon>
+        Grid View
+      </a>
     </nav>
   </div>
 </header>

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EmployeesModule } from './employees/employees.module';
+import { ClrIconModule } from '@clr/angular';
+import { ClarityIcons, gridViewIcon, usersIcon } from '@cds/core/icon';
+import '@cds/core/icon/register.js';
+
+ClarityIcons.addIcons(usersIcon, gridViewIcon);
 
 @Component({
   selector: 'app-root',
@@ -9,9 +14,10 @@ import { EmployeesModule } from './employees/employees.module';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    EmployeesModule
+    EmployeesModule,
+    ClrIconModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent { }
