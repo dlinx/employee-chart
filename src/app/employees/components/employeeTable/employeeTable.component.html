@@ -1,5 +1,5 @@
 <div class="employee-grid-container clr-col-md-10">
-  <add-reportee [(modalOpen)]="addReporteeModal"></add-reportee>
+  <add-reportee [(modalOpen)]="addReporteeModal" [managerId]="currentEmployee?.employeeId||''" (onAddReportee)="onAddReportee($event)"></add-reportee>
   <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee"></change-reporting-line>
   <delete-employee [(modalOpen)]="deleteEmployeeModal" [employee]="currentEmployee" (onDelete)="onDeleteEmployee($event)"></delete-employee>
   <clr-datagrid [(clrDgSelected)]="selectedEmployees">
@@ -29,7 +29,6 @@
       <clr-dg-pagination #pagination [clrDgPageInputDisabled]="true">
         {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} / {{ pagination.totalItems }}
       </clr-dg-pagination>
-      
     </clr-dg-footer>
   </clr-datagrid>
 </div>

@@ -27,6 +27,7 @@ export class EmployeeTableComponent {
   }
 
   addReportee = (emp: Employee) => {
+    this.currentEmployee = emp;
     this.addReporteeModal = true;
   };
   editDetails = (emp: Employee) => { };
@@ -41,5 +42,9 @@ export class EmployeeTableComponent {
 
   onDeleteEmployee = (empId: string) => {
     this.store.dispatch(EmployeeActions.deleteEmployee({ employeeId: empId }))
+  }
+  onAddReportee(emp: Employee) {
+    console.log(emp)
+    this.store.dispatch(EmployeeActions.addReportee({ employee: emp }))
   }
 }

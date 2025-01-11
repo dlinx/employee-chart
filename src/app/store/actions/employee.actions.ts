@@ -1,9 +1,9 @@
 import { createAction, props } from "@ngrx/store";
 import { Employee, ReportingLinePayload } from "../../model/employee.model";
 
-export const addEmployee = createAction(
+export const addReportee = createAction(
     '[Employee] Add Employee',
-    props<{ payload: Employee }>()
+    props<{ employee: Employee }>()
 );
 export const editEmployee = createAction(
     '[Employee] Edit Employee',
