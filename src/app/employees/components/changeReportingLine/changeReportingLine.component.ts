@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Employee } from "../../../model/employee.model";
+import { Employee, ReportingLinePayload } from "../../../model/employee.model";
 
 @Component({
   selector: 'change-reporting-line',
@@ -12,8 +12,14 @@ export class ChangeReportingLineComponent {
   employee: Employee | null = null;
 
   @Output() modalOpenChange = new EventEmitter<boolean>();
+  @Output() onChangeReportingLine = new EventEmitter<ReportingLinePayload>();
 
+  managerId = '123'
   onModalClose() {
     this.modalOpenChange.emit(false)
+  }
+  onChangeBtnClick() {
+    this.modalOpen = false;
+    this.onChangeReportingLine.emit({ employeeId: this.employee?.employeeId || '', managerId: this.managerId })
   }
 }

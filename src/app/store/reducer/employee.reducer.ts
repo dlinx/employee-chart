@@ -191,10 +191,10 @@ export const employeeReducer = createReducer(
     employees: state.employees.filter(emp => emp.employeeId !== employeeId)
   })),
 
-  on(EmployeeActions.changeReportingLine, (state, { payload }) => ({
+  on(EmployeeActions.changeReportingLine, (state, { employeeId, managerId }) => ({
     ...state,
     employees: state.employees.map(emp =>
-      emp.employeeId === payload.employeeId ? { ...emp, reportingTo: payload.managerId } : emp
+      emp.employeeId === employeeId ? { ...emp, manager: managerId } : emp
     )
   }))
 );

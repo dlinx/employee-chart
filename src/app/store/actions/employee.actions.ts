@@ -15,6 +15,6 @@ export const deleteEmployee = createAction(
 );
 export const changeReportingLine = createAction(
     '[Employee] Change Reporting Line',
-    props<{ payload: ReportingLinePayload }>()
+    props<ReportingLinePayload>()
 );
 

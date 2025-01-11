@@ -10,7 +10,7 @@
       </clr-input-container>
       <clr-input-container>
         <label>Manager Name</label>
-        <select clrSelect name="options">
+        <select clrSelect name="options" [(ngModel)]="managerId">
           <option value="one">One</option>
           <option value="two">Two</option>
           <option value="three">Three</option>
@@ -21,6 +21,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline" (click)="modalOpen = false">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="modalOpen = false">Change Reporting</button>
+    <button type="button" class="btn btn-primary" (click)="onChangeBtnClick()">Change Reporting</button>
   </div>
 </clr-modal>

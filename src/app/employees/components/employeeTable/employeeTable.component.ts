@@ -44,7 +44,10 @@ export class EmployeeTableComponent {
     this.store.dispatch(EmployeeActions.deleteEmployee({ employeeId: empId }))
   }
   onAddReportee(emp: Employee) {
-    console.log(emp)
     this.store.dispatch(EmployeeActions.addReportee({ employee: emp }))
+  }
+  onChangeReportingLine(reporting: { employeeId: string, managerId: string }) {
+    const { employeeId, managerId } = reporting;
+    this.store.dispatch(EmployeeActions.changeReportingLine({ employeeId, managerId }));
   }
 }

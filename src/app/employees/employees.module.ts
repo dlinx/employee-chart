@@ -7,6 +7,7 @@ import { ClarityModule, ClrDatagridModule, ClrModalModule } from '@clr/angular';
 import { AddReporteeComponent } from './components/addReportee/addReportee.component';
 import { ChangeReportingLineComponent } from './components/changeReportingLine/changeReportingLine.component';
 import { DeleteEmployeeComponent } from './components/deleteEmployee/deleteEmployee.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DeleteEmployeeComponent } from './components/deleteEmployee/deleteEmplo
     ClarityModule,
     ClrDatagridModule,
     ClrModalModule,
+    FormsModule
   ],
 })
 export class EmployeesModule {}

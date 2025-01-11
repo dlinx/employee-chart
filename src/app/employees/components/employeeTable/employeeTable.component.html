@@ -1,6 +1,6 @@
 <div class="employee-grid-container clr-col-md-10">
   <add-reportee [(modalOpen)]="addReporteeModal" [managerId]="currentEmployee?.employeeId||''" (onAddReportee)="onAddReportee($event)"></add-reportee>
-  <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee"></change-reporting-line>
+  <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee" (onChangeReportingLine)="onChangeReportingLine($event)"></change-reporting-line>
   <delete-employee [(modalOpen)]="deleteEmployeeModal" [employee]="currentEmployee" (onDelete)="onDeleteEmployee($event)"></delete-employee>
   <clr-datagrid [(clrDgSelected)]="selectedEmployees">
     <clr-dg-column>Employee Name</clr-dg-column>
