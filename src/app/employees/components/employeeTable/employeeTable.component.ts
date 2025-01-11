@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'employee-table',
   templateUrl: './employeeTable.component.html',
-  styleUrl:'./employeeTable.component.css'
+  styleUrl: './employeeTable.component.css'
 })
 export class EmployeeTableComponent {
   employees = [
@@ -408,11 +408,23 @@ export class EmployeeTableComponent {
       manager: 'Alice Johnson',
     },
   ];
+  addReporteeModal = false;
+  changeReportingLineModal = false;
+  deleteEmployeeModal = false;
   selectedEmployees = [];
-  currentPage=1;
-  pageSize=10;
-  addReportee = (emp: any) => {};
-  editDetails = (emp: any) => {};
-  deleteEmployee = (emp: any) => {};
-  changeReportingLine = (emp: any) => {};
+  currentPage = 1;
+  pageSize = 10;
+  currentEmployee = null;
+  addReportee = (emp: any) => {
+    this.addReporteeModal = true;
+  };
+  editDetails = (emp: any) => { };
+  deleteEmployee = (emp: any) => {
+    this.deleteEmployeeModal = true;
+    this.currentEmployee = emp
+  };
+  changeReportingLine = (emp: any) => {
+    this.changeReportingLineModal = true;
+    this.currentEmployee = emp
+  };
 }

@@ -1,0 +1,26 @@
+<clr-modal [(clrModalOpen)]="modalOpen" (clrModalOpenChange)="onModalClose()">
+  <h3 class="modal-title">Change Reporting Line</h3>
+  <div class="modal-body">
+    <p>Reassign this employee to report to a new manager. Select the desired manager from the available options to
+      update the reporting hierarchy in the organization chart.</p>
+    <form clrForm clrLayout="horizontal" clrLabelSize="4">
+      <clr-input-container>
+        <label>Employee Name</label>
+        <label>{{employee?.employeeName}}</label>
+      </clr-input-container>
+      <clr-input-container>
+        <label>Manager Name</label>
+        <select clrSelect name="options">
+          <option value="one">One</option>
+          <option value="two">Two</option>
+          <option value="three">Three</option>
+        </select>
+        <clr-control-error>Enter Employee Name</clr-control-error>
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="modalOpen = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="modalOpen = false">Change Reporting</button>
+  </div>
+</clr-modal>

@@ -1,4 +1,7 @@
 <div class="employee-grid-container clr-col-md-10">
+  <add-reportee [(modalOpen)]="addReporteeModal"></add-reportee>
+  <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee"></change-reporting-line>
+  <delete-employee [(modalOpen)]="deleteEmployeeModal" [employee]="currentEmployee"></delete-employee>
   <clr-datagrid [(clrDgSelected)]="selectedEmployees">
     <clr-dg-column>Employee Name</clr-dg-column>
     <clr-dg-column>Employee ID</clr-dg-column>
