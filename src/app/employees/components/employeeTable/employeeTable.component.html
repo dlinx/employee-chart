@@ -1,7 +1,12 @@
 <div class="employee-grid-container clr-col-md-10">
-  <add-reportee [(modalOpen)]="addReporteeModal" [managerId]="currentEmployee?.employeeId||''" (onAddReportee)="onAddReportee($event)"></add-reportee>
-  <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee" (onChangeReportingLine)="onChangeReportingLine($event)"></change-reporting-line>
-  <delete-employee [(modalOpen)]="deleteEmployeeModal" [employee]="currentEmployee" (onDelete)="onDeleteEmployee($event)"></delete-employee>
+  <add-reportee [(modalOpen)]="addReporteeModal" [managerId]="currentEmployee?.employeeId||''"
+    (onAddReportee)="onAddReportee($event)"></add-reportee>
+  <change-reporting-line [(modalOpen)]="changeReportingLineModal" [employee]="currentEmployee"
+    (onChangeReportingLine)="onChangeReportingLine($event)"></change-reporting-line>
+  <delete-employee [(modalOpen)]="deleteEmployeeModal" [employee]="currentEmployee"
+    (onDelete)="onDeleteEmployee($event)"></delete-employee>
+  <edit-employee [(modalOpen)]="editEmployeeModal" [employee]="currentEmployee"
+    (onEdit)="onEditEmployee($event)"></edit-employee>
   <clr-datagrid [(clrDgSelected)]="selectedEmployees">
     <clr-dg-column>Employee Name</clr-dg-column>
     <clr-dg-column>Employee ID</clr-dg-column>
@@ -9,7 +14,7 @@
     <clr-dg-column>Email</clr-dg-column>
     <clr-dg-column>Phone</clr-dg-column>
     <clr-dg-column>Manager</clr-dg-column>
-  
+
     <clr-dg-row *clrDgItems="let employee of (employees$ | async) || []" [clrDgItem]="employee">
       <clr-dg-action-overflow>
         <button class="action-item" (click)="addReportee(employee)">Add Reportee</button>
@@ -24,7 +29,7 @@
       <clr-dg-cell>{{ employee.phone }}</clr-dg-cell>
       <clr-dg-cell>{{ employee.manager }}</clr-dg-cell>
     </clr-dg-row>
-  
+
     <clr-dg-footer>
       <clr-dg-pagination #pagination [clrDgPageInputDisabled]="true">
         {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} / {{ pagination.totalItems }}

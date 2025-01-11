@@ -17,6 +17,7 @@ export class EmployeeTableComponent {
   addReporteeModal = false;
   changeReportingLineModal = false;
   deleteEmployeeModal = false;
+  editEmployeeModal = false;
   selectedEmployees = [];
   currentPage = 1;
   pageSize = 10;
@@ -30,7 +31,9 @@ export class EmployeeTableComponent {
     this.currentEmployee = emp;
     this.addReporteeModal = true;
   };
-  editDetails = (emp: Employee) => { };
+  editDetails = (emp: Employee) => {
+    this.editEmployeeModal = true;
+  };
   deleteEmployee = (emp: Employee) => {
     this.deleteEmployeeModal = true;
     this.currentEmployee = emp
@@ -49,5 +52,8 @@ export class EmployeeTableComponent {
   onChangeReportingLine(reporting: { employeeId: string, managerId: string }) {
     const { employeeId, managerId } = reporting;
     this.store.dispatch(EmployeeActions.changeReportingLine({ employeeId, managerId }));
+  }
+  onEditEmployee(employee: Employee) {
+    this.store.dispatch(EmployeeActions.editEmployee(employee));
   }
 }

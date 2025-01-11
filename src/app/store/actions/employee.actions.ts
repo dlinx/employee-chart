@@ -7,7 +7,7 @@ export const addReportee = createAction(
 );
 export const editEmployee = createAction(
     '[Employee] Edit Employee',
-    props<{ payload: Employee }>()
+    props<Employee>()
 );
 export const deleteEmployee = createAction(
     '[Employee] Delete Employee',

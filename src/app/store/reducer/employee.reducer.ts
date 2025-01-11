@@ -179,10 +179,10 @@ export const employeeReducer = createReducer(
     employees: [...state.employees, employee]
   })),
 
-  on(EmployeeActions.editEmployee, (state, { payload }) => ({
+  on(EmployeeActions.editEmployee, (state, employee) => ({
     ...state,
     employees: state.employees.map(emp =>
-      emp.employeeId === payload.employeeId ? { ...emp, ...payload } : emp
+      emp.employeeId === employee.employeeId ? { ...emp, ...employee } : emp
     )
   })),
 

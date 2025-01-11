@@ -8,6 +8,7 @@ import { AddReporteeComponent } from './components/addReportee/addReportee.compo
 import { ChangeReportingLineComponent } from './components/changeReportingLine/changeReportingLine.component';
 import { DeleteEmployeeComponent } from './components/deleteEmployee/deleteEmployee.component';
 import { FormsModule } from '@angular/forms';
+import { EditEmployeeComponent } from './components/editEmployee/editEmployee.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     EmployeeTreeComponent,
     AddReporteeComponent,
     ChangeReportingLineComponent,
-    DeleteEmployeeComponent
+    DeleteEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     RouterModule.forChild(routes),
