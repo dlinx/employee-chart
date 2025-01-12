@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Employee, ReportingLinePayload } from "../../../model/employee.model";
-import { Observable } from "rxjs";
+import { Observable, filter, map, pipe } from "rxjs";
 import { Store } from "@ngrx/store";
 import { selectAllEmployees } from "../../../store/selectors/employee.selector";
 import { State } from "../../../store/reducer/employee.reducer";
@@ -27,6 +27,11 @@ export class ChangeReportingLineComponent {
 
   ngOnInit() {
     this.managerId = this.employee!.manager;
+    this.employees$ = this.employees$.pipe(
+      map((employees) =>
+        employees.filter((e: any) => e.manager !== this.employee!.employeeId)
+      )
+    );
   }
 
   onModalClose() {
