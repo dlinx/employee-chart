@@ -1,27 +1,79 @@
-# EmployeeChart
+# Angular Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+This repository contains an Employee Reporting application built with the Clarity Design System, `@ngrx/store` for state management, and D3 for charting. It uses LocalStorage for client-side data persistence.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [How to Run](#how-to-run)
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Responsive UI built with the Clarity Design System (v17).
+- State management using @ngrx/store for efficient application state handling.
+- Interactive visualizations powered by the D3 charting library.
+- Persistent data storage using LocalStorage.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- **Framework**: Angular 19
+- **UI Library**: Clarity Design System (v17)
+- **State Management**: @ngrx/store
+- **Storage**: LocalStorage
+- **Charting**: D3
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+Ensure you have the following installed on your system:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Node.js](https://nodejs.org/) (version 16 or later recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [Angular CLI](https://angular.io/cli) (install globally if not already installed):
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:dlinx/employee-chart.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd employee-chart
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+---
+
+## How to Run
+
+1. Start the development server:
+   ```bash
+   ng serve
+   ```
+
+2. Open your browser and navigate to:
+   ```
+   http://localhost:4200/
+   ```
+
+---
+
+Happy coding! 🚀
+
