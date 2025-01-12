@@ -5,6 +5,7 @@ export interface Employee {
     designation: string,
     phone: string,
     manager: string,
+    children?: Employee[]
 }
 
 export interface ReportingLinePayload {

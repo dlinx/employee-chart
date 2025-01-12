@@ -1,0 +1,17 @@
+<div class="card clr-col-12 clr-col-sm-4 emp-card" [ngStyle]="{left:x,top:y}">
+  <div class="card-block">
+    <div class="card-title">{{employee?.employeeName}}
+      <button class="dropdown-toggle btn btn-sm btn-link right">
+        <cds-icon shape="cog"></cds-icon>
+      </button>
+    </div>
+    <div class="card-text card-details">
+      <cds-icon shape="user" solid="true" size="xxl"></cds-icon>
+      <div>
+        <div>{{employee?.designation}}</div>
+        <div><span class="bold">Email: </span>{{employee?.email}}</div>
+        <div><span class="bold">Phone: </span>{{employee?.phone}}</div>
+      </div>
+    </div>
+  </div>
+</div>

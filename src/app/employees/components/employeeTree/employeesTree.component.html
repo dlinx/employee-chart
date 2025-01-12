@@ -1,1 +1,8 @@
-<div>Tree Component</div>
+<div #overlay class="org-chart"></div>
+<ng-template #employeeCard let-data>
+  <employee-card
+    [employee]="data.emp"
+    [x]="data.x"
+    [y]="data.y"
+  ></employee-card>
+</ng-template>

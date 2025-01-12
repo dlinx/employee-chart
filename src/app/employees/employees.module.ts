@@ -9,6 +9,7 @@ import { ChangeReportingLineComponent } from './components/changeReportingLine/c
 import { DeleteEmployeeComponent } from './components/deleteEmployee/deleteEmployee.component';
 import { FormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './components/editEmployee/editEmployee.component';
+import { EmployeeCardComponent } from './components/employeeCard/employeeCard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditEmployeeComponent } from './components/editEmployee/editEmployee.co
     AddReporteeComponent,
     ChangeReportingLineComponent,
     DeleteEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    EmployeeCardComponent
   ],
   imports: [
     RouterModule.forChild(routes),
