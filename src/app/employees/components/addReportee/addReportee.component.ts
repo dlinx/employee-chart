@@ -28,6 +28,7 @@ export class AddReporteeComponent {
       designation: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^\+1\s[0-9]{3}-[0-9]{3}-[0-9]{4}$/)]],
+      employeeId: `E${Math.round(Math.random() * 1000).toString().padStart(3, '0')}`
     });
   }
 

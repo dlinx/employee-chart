@@ -19,11 +19,16 @@ export class ChangeReportingLineComponent {
   @Output() onChangeReportingLine = new EventEmitter<ReportingLinePayload>();
   employees$: Observable<Employee[]>;
 
-  managerId = '123'
+  managerId = ''
 
   constructor(private store: Store<{ employees: State }>) {
     this.employees$ = this.store.select(selectAllEmployees);
   }
+
+  ngOnInit() {
+    this.managerId = this.employee!.manager;
+  }
+
   onModalClose() {
     this.modalOpenChange.emit(false)
   }

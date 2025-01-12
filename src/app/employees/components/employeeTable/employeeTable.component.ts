@@ -32,6 +32,7 @@ export class EmployeeTableComponent {
     this.addReporteeModal = true;
   };
   editDetails = (emp: Employee) => {
+    this.currentEmployee = emp;
     this.editEmployeeModal = true;
   };
   deleteEmployee = (emp: Employee) => {

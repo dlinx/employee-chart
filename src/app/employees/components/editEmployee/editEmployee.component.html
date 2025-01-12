@@ -3,39 +3,40 @@
   <div class="modal-body">
     <p>Add a new employee who will report directly to this person. Provide details like name, designation, email and
       phone to create their profile in the organization chart.</p>
-    <form clrForm clrLayout="horizontal" clrLabelSize="4">
+    <form clrForm clrLayout="horizontal" clrLabelSize="4" [formGroup]="employeeForm">
       <clr-input-container>
         <label>Employee name</label>
-        <input clrInput type="text" name="employeeName" required />
+        <input clrInput type="text" formControlName="employeeName" required />
         <clr-control-error>Enter Employee Name</clr-control-error>
       </clr-input-container>
       <clr-input-container>
         <label>Employee name</label>
         <label>{{employee?.employeeId}}</label>
       </clr-input-container>
-      <clr-input-container>
+      <clr-select-container>
         <label>Designation</label>
-        <input clrInput type="text" name="designation" required />
-        <clr-control-error>Enter Designation</clr-control-error>
-      </clr-input-container>
+        <select clrSelect name="options" formControlName="designation">
+          <option value="" disabled>Select Designation</option>
+          <option value="CEO">CEO</option>
+          <option value="CFO">CFO</option>
+          <option value="CTO">CTO</option>
+          <option value="Finance Manager">Finance Manager</option>
+          <option value="Engineering Manager">Engineering Manager</option>
+          <option value="Team Lead">Team Lead</option>
+          <option value="Finance Manager">Finance Manager</option>
+        </select>
+        <clr-control-error>Select Designation</clr-control-error>
+      </clr-select-container>
       <clr-input-container>
         <label>Email ID</label>
-        <input clrInput type="text" name="emailId" required />
+        <input clrInput type="text" name="emailId" formControlName="email" required />
         <clr-control-error>Enter Email ID</clr-control-error>
       </clr-input-container>
       <clr-input-container>
         <label>Phone Number</label>
-        <input clrInput type="text" name="phoneNumber" required />
+        <input clrInput type="text" name="phoneNumber" formControlName="phone" required />
         <clr-control-error>Enter Phone Number</clr-control-error>
       </clr-input-container>
-      <clr-select-container>
-        <label>Manager Name</label>
-        <select clrSelect name="options">
-          <option value="one">One</option>
-          <option value="two">Two</option>
-          <option value="three">Three</option>
-        </select>
-      </clr-select-container>
     </form>
   </div>
   <div class="modal-footer">
