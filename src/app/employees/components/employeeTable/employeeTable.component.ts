@@ -43,8 +43,8 @@ export class EmployeeTableComponent {
     this.currentEmployee = emp
   };
 
-  onDeleteEmployee = (empId: string) => {
-    this.store.dispatch(EmployeeActions.deleteEmployee({ employeeId: empId }))
+  onDeleteEmployee = (emp: { empId: string, newManager: string }) => {
+    this.store.dispatch(EmployeeActions.deleteEmployee({ employeeId: emp.empId, newManagerId: emp.newManager }))
   }
   onAddReportee(emp: Employee) {
     this.store.dispatch(EmployeeActions.addReportee({ employee: emp }))

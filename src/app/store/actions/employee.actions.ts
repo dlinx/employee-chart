@@ -11,7 +11,7 @@ export const editEmployee = createAction(
 );
 export const deleteEmployee = createAction(
     '[Employee] Delete Employee',
-    props<{ employeeId: string }>()
+    props<{ employeeId: string, newManagerId: string }>()
 );
 export const changeReportingLine = createAction(
     '[Employee] Change Reporting Line',

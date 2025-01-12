@@ -12,11 +12,11 @@ export class DeleteEmployeeComponent {
   employee: Employee | null = null;
 
   @Output() modalOpenChange = new EventEmitter<boolean>();
-  @Output() onDelete = new EventEmitter<string>();
+  @Output() onDelete = new EventEmitter<{ empId: string, newManager: string }>();
 
   onDeleteBtnClick() {
     this.modalOpen = false;
-    this.onDelete.emit(this.employee?.employeeId);
+    this.onDelete.emit({ empId: this.employee!.employeeId!, newManager: this.employee!.manager });
   }
   onModalClose() {
     this.modalOpenChange.emit(false)

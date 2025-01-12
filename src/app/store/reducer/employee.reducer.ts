@@ -98,9 +98,9 @@ export const employeeReducer = createReducer(
     )
   })),
 
-  on(EmployeeActions.deleteEmployee, (state, { employeeId }) => ({
+  on(EmployeeActions.deleteEmployee, (state, { employeeId, newManagerId }) => ({
     ...state,
-    employees: state.employees.filter(emp => emp.employeeId !== employeeId)
+    employees: state.employees.filter(emp => emp.employeeId !== employeeId).map(emp => emp.manager === employeeId ? { ...emp, manager: newManagerId } : emp)
   })),
 
   on(EmployeeActions.changeReportingLine, (state, { employeeId, managerId }) => ({

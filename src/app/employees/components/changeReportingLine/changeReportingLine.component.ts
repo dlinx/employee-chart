@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Employee, ReportingLinePayload } from "../../../model/employee.model";
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
+import { selectAllEmployees } from "../../../store/selectors/employee.selector";
+import { State } from "../../../store/reducer/employee.reducer";
 
 @Component({
   selector: 'change-reporting-line',
@@ -13,8 +17,13 @@ export class ChangeReportingLineComponent {
 
   @Output() modalOpenChange = new EventEmitter<boolean>();
   @Output() onChangeReportingLine = new EventEmitter<ReportingLinePayload>();
+  employees$: Observable<Employee[]>;
 
   managerId = '123'
+
+  constructor(private store: Store<{ employees: State }>) {
+    this.employees$ = this.store.select(selectAllEmployees);
+  }
   onModalClose() {
     this.modalOpenChange.emit(false)
   }

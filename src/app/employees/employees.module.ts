@@ -7,7 +7,7 @@ import { ClarityModule, ClrDatagridModule, ClrModalModule } from '@clr/angular';
 import { AddReporteeComponent } from './components/addReportee/addReportee.component';
 import { ChangeReportingLineComponent } from './components/changeReportingLine/changeReportingLine.component';
 import { DeleteEmployeeComponent } from './components/deleteEmployee/deleteEmployee.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './components/editEmployee/editEmployee.component';
 import { EmployeeCardComponent } from './components/employeeCard/employeeCard.component';
 
@@ -27,7 +27,8 @@ import { EmployeeCardComponent } from './components/employeeCard/employeeCard.co
     ClarityModule,
     ClrDatagridModule,
     ClrModalModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class EmployeesModule {}

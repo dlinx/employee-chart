@@ -3,31 +3,39 @@
   <div class="modal-body">
     <p>Add a new employee who will report directly to this person. Provide details like name, designation, email and
       phone to create their profile in the organization chart.</p>
-    <form clrForm clrLayout="horizontal" clrLabelSize="4">
+    <form clrForm clrLayout="horizontal" clrLabelSize="4" [formGroup]="addReporteeForm">
       <clr-input-container>
         <label>Manager name</label>
         <label>Some manager Name</label>
-        <clr-control-error>Enter Manager Name</clr-control-error>
       </clr-input-container>
       <clr-input-container>
         <label>Employee name</label>
-        <input clrInput type="text" name="employeeName" required />
+        <input clrInput type="text" name="employeeName" formControlName="employeeName" required />
         <clr-control-error>Enter Employee Name</clr-control-error>
       </clr-input-container>
-      <clr-input-container>
+      <clr-select-container>
         <label>Designation</label>
-        <input clrInput type="text" name="designation" required />
-        <clr-control-error>Enter Designation</clr-control-error>
-      </clr-input-container>
+        <select clrSelect name="options" formControlName="designation">
+          <option value="" disabled>Select Designation</option>
+          <option value="CTO">CTO</option>
+          <option value="CTO">Engineering Manager</option>
+          <option value="CTO">Team Lead</option>
+          <option value="CTO">Finance Manager</option>
+        </select>
+        <clr-control-error>Select Designation</clr-control-error>
+      </clr-select-container>
       <clr-input-container>
         <label>Email ID</label>
-        <input clrInput type="text" name="emailId" required />
-        <clr-control-error>Enter Email ID</clr-control-error>
+        <input clrInput type="text" name="emailId" formControlName="email" required />
+        <clr-control-error *clrIfError="'required'">Enter Email ID</clr-control-error>
+        <clr-control-error *clrIfError="'pattern'">Enter valid Email ID</clr-control-error>
       </clr-input-container>
       <clr-input-container>
         <label>Phone Number</label>
-        <input clrInput type="text" name="phoneNumber" required />
-        <clr-control-error>Enter Phone Number</clr-control-error>
+        <input clrInput type="text" name="phoneNumber" formControlName="phone" required />
+        <clr-control-error *clrIfError="'required'">Enter Phone Number</clr-control-error>
+        <clr-control-error *clrIfError="'pattern'">Enter valid Phone Number in following format +1
+          XXX-XXX-XXXX</clr-control-error>
       </clr-input-container>
     </form>
   </div>

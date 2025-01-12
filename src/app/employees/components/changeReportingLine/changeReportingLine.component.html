@@ -8,15 +8,14 @@
         <label>Employee Name</label>
         <label>{{employee?.employeeName}}</label>
       </clr-input-container>
-      <clr-input-container>
+      <clr-select-container>
         <label>Manager Name</label>
         <select clrSelect name="options" [(ngModel)]="managerId">
-          <option value="one">One</option>
-          <option value="two">Two</option>
-          <option value="three">Three</option>
+          <option value="" disabled selected>Choose a role</option>
+          <option value="one" *ngFor="let emp of employees$ | async" [value]="emp.employeeId">{{emp.employeeName}}</option>
         </select>
         <clr-control-error>Enter Employee Name</clr-control-error>
-      </clr-input-container>
+      </clr-select-container>
     </form>
   </div>
   <div class="modal-footer">
