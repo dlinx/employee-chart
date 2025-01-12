@@ -1,14 +1,15 @@
 <clr-modal [(clrModalOpen)]="modalOpen" (clrModalOpenChange)="onModalClose()">
-    <h3 class="modal-title">Delete Employee</h3>
-    <div class="modal-body">
-      <p>Deleting employee will reassign all their direct reportees to the emplyee's manager. Confirm this action to delete the employee from the organization chart and update the reporting hierarchy accordingly.</p>
-    </div>
-    <clr-input-container>
-        <label>Employee Name</label>
-        <label>Some manager Name</label>
-      </clr-input-container>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline" (click)="modalOpen = false">Cancel</button>
-      <button type="button" class="btn btn-danger" (click)="onDeleteBtnClick()">Delete</button>
-    </div>
-  </clr-modal>
+  <h3 class="modal-title">Delete Employee</h3>
+  <div class="modal-body">
+    <p>Deleting employee will reassign all their direct reportees to the emplyee's manager. Confirm this action to
+      delete the employee from the organization chart and update the reporting hierarchy accordingly.</p>
+    <p>
+      <label>Employee Name:</label> 
+      <label> {{employee?.employeeName}}</label>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="modalOpen = false">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onDeleteBtnClick()">Delete</button>
+  </div>
+</clr-modal>
