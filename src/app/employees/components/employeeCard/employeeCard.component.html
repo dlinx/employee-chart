@@ -1,9 +1,18 @@
 <div class="card clr-col-12 clr-col-sm-4 emp-card" [ngStyle]="{left:x,top:y}">
   <div class="card-block">
     <div class="card-title">{{employee?.employeeName}}
-      <button class="dropdown-toggle btn btn-sm btn-link right">
+      <clr-dropdown>
+      <button class="dropdown-toggle btn btn-sm btn-link right" clrDropdownTrigger>
         <cds-icon shape="cog"></cds-icon>
       </button>
+      <clr-dropdown-menu>
+        <button clrDropdownItem>Add Reportee</button>
+        <button clrDropdownItem>Edit Details</button>
+        <button clrDropdownItem>Delete Employee</button>
+        <button clrDropdownItem>Change Reporting Line</button>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+
     </div>
     <div class="card-text card-details">
       <cds-icon shape="user" solid="true" size="xxl"></cds-icon>
